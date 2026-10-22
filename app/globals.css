@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f3eb;
+  --surface: #ffffff;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --indigo: #4338ca;
+  --indigo-dark: #312e81;
+  --yellow: #f5c518;
+  --yellow-dark: #c99712;
+  --line: #e7e2d6;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-indigo: var(--indigo);
+  --color-indigo-dark: var(--indigo-dark);
+  --color-yellow: var(--yellow);
+  --color-yellow-dark: var(--yellow-dark);
+  --color-line: var(--line);
+  --font-sans: var(--font-plus-jakarta);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -40px;
+  z-index: 80;
+  border-radius: 0.5rem;
+  background: var(--indigo);
+  padding: 0.5rem 0.75rem;
+  color: white;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
